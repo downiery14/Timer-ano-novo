@@ -1,0 +1,40 @@
+* {
+    background: none;
+    font-family: "Poppins";
+}
+
+QStackedWidget {
+    margin: 0;
+    background: url("assets/img/bg.png");
+    background-position: top center;
+    background-color: #060606;
+    background-repeat: no-repeat;
+}
+
+QLabel#labelDescricaoTempoRestante {
+    color: #99701F;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+QLabel#labelTempoRestante {
+    color: #F5F5F5;
+    font-size: 160px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+QLabel#labelDescricaoHoraAtual {
+    color: #99701F;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+QLabel#labelHoraAtual {
+    color: #CCA352;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 100%;
+}
