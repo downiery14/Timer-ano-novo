@@ -39,12 +39,16 @@ class MainWindow(QStackedWidget):
     def ir_para_tela(self, nome_tela_destino: str):
         if nome_tela_destino == 'TelaLetra':
             self.player.play()
-            print('batata sim')
         elif nome_tela_destino == 'TelaFelizAnoNovo':
             self.widget(self.nome_tela[nome_tela_destino]).animar_label_feliz_ano_novo()
+            print('Tela felizada com')
 
         self.setCurrentIndex(self.nome_tela[nome_tela_destino])
 
     def esta_tocando(self, playing: bool):
         if not playing:
             self.widget(self.nome_tela['TelaFelizAnoNovo']).parar_animacao_label_feliz_ano_novo()
+
+    def closeEvent(self, event):
+        self.widget(self.nome_tela['TelaFelizAnoNovo']).parar_animacao_label_feliz_ano_novo()
+        event.accept()

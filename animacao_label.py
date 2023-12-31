@@ -1,6 +1,6 @@
 from PySide6.QtCore import QRunnable, Slot
-from PySide6.QtWidgets import QLabel
 from time import sleep
+from math import cos, radians
 
 
 class AnimacaoLabels(QRunnable):
@@ -10,6 +10,8 @@ class AnimacaoLabels(QRunnable):
         self.kwargs = kwargs
         self.__labels = labels
         self.__interromper_execucao = False
+        self.__n_execucao = 0
+        self.__delay = 0.75
         self.setAutoDelete(True)
 
     @Slot()
@@ -17,11 +19,27 @@ class AnimacaoLabels(QRunnable):
         while not self.interromper_execucao:
             for label in self.__labels:
                 label.setStyleSheet('color: #CCA352')
-            sleep(1.2)
+            sleep(self.__delay)
             for label in self.__labels:
                 label.setStyleSheet('color: #FFFFFF')
-            sleep(1.2)
-            print(self.interromper_execucao)
+            sleep(self.__delay)
+            self.__calcular_delay()
+
+        return 0
+
+    def __calcular_delay(self):
+        self.__delay = 0.5 * self.__n_execucao ** 2 - 1.2 * self.__n_execucao + 0.75
+
+        if self.__delay < 0.15:
+            self.__delay = 0.15
+            self.__n_execucao += 0.1
+
+        self.__n_execucao += 0.08
+        if self.__n_execucao >= 2.4:
+            self.__n_execucao = 0
+        print(self.__delay)
+        print(self.__n_execucao)
+        print()
 
     @property
     def interromper_execucao(self) -> bool:

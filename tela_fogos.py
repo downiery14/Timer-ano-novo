@@ -48,7 +48,7 @@ class TelaLetra(MinhaTela):
     def atualizar_timers(self):
         self._atualizar_tempo_restante()
         self._atualizar_hora_atual()
-        if self.tempo_restante == timedelta(hours=0, minutes=0, seconds=0):
+        if self.tempo_restante == timedelta(hours=0, minutes=0, seconds=0) and self.tela_principal.currentIndex() == 1:
             self.__mudar_tela()
 
     def __mudar_tela(self):

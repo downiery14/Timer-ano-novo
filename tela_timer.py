@@ -28,5 +28,5 @@ class TelaTimer(MinhaTela):
         self._atualizar_tempo_restante()
         self._atualizar_hora_atual()
         horas, minutos, segundos = self.horas_minutos_segundos(self.tempo_restante)
-        if horas == 0 and minutos <= 4 and segundos <= 15 and self.tela_principal.currentIndex() == 0:
+        if horas == 0 and minutos <= 4 and segundos <= 20 and self.tela_principal.currentIndex() == 0:
             self.__mudar_tela()
