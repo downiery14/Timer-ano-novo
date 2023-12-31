@@ -1,10 +1,10 @@
 * {
     background: none;
     font-family: "Poppins";
+    margin: 0;
 }
 
 QStackedWidget {
-    margin: 0;
     background: url("assets/img/bg.png");
     background-position: top center;
     background-color: #060606;
@@ -13,28 +13,83 @@ QStackedWidget {
 
 QLabel#labelDescricaoTempoRestante {
     color: #99701F;
-    font-size: 64px;
     font-weight: 600;
     line-height: 100%;
+}
+
+QWidget#telaTimer QLabel#labelDescricaoTempoRestante {
+    font-size: 64px;
+}
+
+QWidget#telaLetra QLabel#labelDescricaoTempoRestante {
+    font-size: 44px;
 }
 
 QLabel#labelTempoRestante {
     color: #F5F5F5;
-    font-size: 160px;
     font-weight: 700;
     line-height: 100%;
 }
 
+QWidget#telaTimer QLabel#labelTempoRestante {
+    font-size: 160px;
+}
+
+QWidget#telaLetra QLabel#labelTempoRestante {
+    font-size: 80px;
+}
+
+QWidget#telaFelizAnoNovo QLabel#labelTempoRestante {
+    font-size: 64px;
+}
+
 QLabel#labelDescricaoHoraAtual {
     color: #99701F;
-    font-size: 48px;
     font-weight: 600;
     line-height: 100%;
+}
+
+QWidget#telaTimer QLabel#labelDescricaoHoraAtual {
+    font-size: 48px;
+}
+
+QWidget#telaLetra QLabel#labelDescricaoHoraAtual {
+    font-size: 40px;
+}
+
+QWidget#telaFelizAnoNovo QLabel#labelDescricaoHoraAtual {
+    font-size: 40px;
 }
 
 QLabel#labelHoraAtual {
     color: #CCA352;
     font-size: 64px;
     font-weight: 700;
-    line-height: 100%;
+        line-height: 100%;
+}
+
+QWidget#telaTimer QLabel#labelHoraAtual {
+    font-size: 64px;
+}
+
+QWidget#telaLetra QLabel#labelHoraAtual {
+    font-size: 64px;
+}
+
+QWidget#telaFelizAnoNovo QLabel#labelHoraAtual {
+    font-size: 64px;
+}
+
+QLabel#labelFelizAnoNovo {
+    color: #FFF;
+    font-weight: 700;
+    line-height: 80%; /* 115.2px */
+}
+
+QWidget#telaLetra QLabel#labelFelizAnoNovo {
+    font-size: 64px;
+}
+
+QWidget#telaFelizAnoNovo QLabel#labelFelizAnoNovo {
+    font-size: 144px;
 }

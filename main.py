@@ -1,6 +1,5 @@
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication
 from pathlib import Path
-from tela_timer import TelaTimer
 from main_window import MainWindow
 
 app = QApplication()
