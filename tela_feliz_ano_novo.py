@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QStackedWidget, QVBoxLayout
-from PySide6.QtCore import Qt, QThreadPool
+from PySide6.QtCore import Qt, QTimer
 from minha_tela import MinhaTela
 from animacao_label import AnimacaoLabels
 
@@ -8,9 +8,6 @@ class TelaFelizAnoNovo(MinhaTela):
     def __init__(self, tela_principal: QStackedWidget):
         super().__init__(tela_principal)
         self.setObjectName('telaFelizAnoNovo')
-
-        self.__threadpool = QThreadPool()
-        self.animacao_label_feliz_ano_novo = AnimacaoLabels([self.label_feliz_ano_novo_1, self.label_feliz_ano_novo_2])
 
         layout_tela_feliz_ano_novo = QVBoxLayout()
         layout_tela_feliz_ano_novo.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -26,7 +23,13 @@ class TelaFelizAnoNovo(MinhaTela):
         self.setLayout(layout_tela_feliz_ano_novo)
 
     def animar_label_feliz_ano_novo(self):
-        self.__threadpool.start(self.animacao_label_feliz_ano_novo)
+        for i in range(0, 6, 2):
+            QTimer.singleShot(1000 * i, self.tela_principal.app, lambda: self.mudar_cor_labels_feliz_ano_novo('#99701F'))
+            QTimer.singleShot(1000 * (i+1), self.tela_principal.app, lambda: self.mudar_cor_labels_feliz_ano_novo('#FFFFFF'))
+
+    def mudar_cor_labels_feliz_ano_novo(self, cor: str):
+        self.label_feliz_ano_novo_1.setStyleSheet(f'color: {cor};')
+        self.label_feliz_ano_novo_2.setStyleSheet(f'color: {cor};')
 
     def parar_animacao_label_feliz_ano_novo(self):
         self.animacao_label_feliz_ano_novo.interromper_execucao = True

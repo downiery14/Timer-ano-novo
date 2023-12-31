@@ -11,7 +11,7 @@ class MinhaTela(QWidget):
         self.tela_principal = tela_principal
         self.app = self.tela_principal.app
 
-        # self._hora_final = datetime(year=2023, month=12, day=31)
+        # self._hora_final = datetime(year=2024, month=1, day=1)
         self._hora_final = datetime.now() + timedelta(minutes=4, seconds=23)
 
         self.__tempo_restante = self._hora_final - datetime.now()

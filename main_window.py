@@ -13,7 +13,6 @@ class MainWindow(QStackedWidget):
         self.app = app
         self.setGeometry(0, 0, 1024, 768)
         self.setWindowTitle('Timer da virada de ano')
-        self.setScreen(self.app.screens()[1])
 
         self.player = QMediaPlayer()
         self.__audio_output = QAudioOutput()
